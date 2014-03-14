@@ -116,8 +116,10 @@ class PodcastEpisode extends DataObject {
 			,'avi' => 'video/x-msvideo'
 			,'3gp' => 'video/3gpp'
 		);
-
-		$extension = strtolower(end(explode('.', $filename)));
+    
+		// Prevents - [Strict Notice] Only variables should be passed by reference
+		// $extension = strtolower(end(explode('.', $filename)));
+		$extension = $this->EpisodeFile()->Extension;
 
 		return $mime_types[$extension];
 	}
@@ -143,7 +145,9 @@ class PodcastEpisode extends DataObject {
 			,'3gp' => 'video'
 		);
 
-		$extension = strtolower(end(explode('.', $filename)));
+		// Prevents - [Strict Notice] Only variables should be passed by reference
+		// $extension = strtolower(end(explode('.', $filename)));
+		$extension = $this->EpisodeFile()->Extension;
 
 		return $mime_types[$extension];
 	}
