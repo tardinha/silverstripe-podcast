@@ -1,3 +1,3 @@
- $(document).ready( function(){ 
- 	mejs.$('video, audio').mediaelementplayer();
- });
+$(document).ready( function(){ 
+  mejs.$('video, audio').mediaelementplayer();
+});
